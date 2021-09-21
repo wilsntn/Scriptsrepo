@@ -13,7 +13,7 @@ os.chdir(pasta)
 
 zip = zipfile.ZipFile(f'{dia}.zip', 'w')
 
-zip.write('*.txt')
+zip.write('asdasd.txt')
 zip.close()
 
 
