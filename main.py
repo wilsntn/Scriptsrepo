@@ -1,16 +1,20 @@
-# This is a sample Python script.
+from datetime import date
+import os
+import zipfile
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+hoje = date.today()
+dia = hoje.strftime("%d-%m-%Y")
+pasta = f'E:/UNILAB/{dia}'
+
+print(dia)
+
+os.chdir(pasta)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+zip = zipfile.ZipFile(f'{dia}.zip', 'w')
+
+zip.write('*.txt')
+zip.close()
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(os.listdir(pasta))
